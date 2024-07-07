@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   } else {
    const data = await retrieveData("payment");
    const ResponseInit = {status: 200, statusText: "OK"};
-   return res.status(405).json({...ResponseInit, message: data});
+   return res.status(200).json({...ResponseInit, message: data});
   }
  }
 
