@@ -42,11 +42,11 @@ export default async function handler(req, res) {
      statusText: "Unprocessable Entity",
      message: "amount, consumer and createdBy are required",
     };
-    return res.status(405).json({...ResponseInit});
+    return res.status(422).json({...ResponseInit});
    }
   } else {
    const ResponseInit = {status: 422, statusText: "Unprocessable Entity"};
-   return res.status(405).json({...ResponseInit, message: "body is required"});
+   return res.status(422).json({...ResponseInit, message: "body is required"});
   }
  }
  if (req.method === "PUT") {
