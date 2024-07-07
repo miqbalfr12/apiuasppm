@@ -35,7 +35,9 @@ export default async function handler(req, res) {
      editedAt: Date.now(),
     });
     const ResponseInit = {status: 200, statusText: "OK"};
-    return res.status(200).json({...ResponseInit, message: data});
+    return res
+     .status(200)
+     .json({...ResponseInit, message: {id: data.id, ...req.body}});
    } else {
     const ResponseInit = {
      status: 422,
